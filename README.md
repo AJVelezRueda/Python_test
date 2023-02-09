@@ -5,6 +5,8 @@
 $ python3 -m venv .venv
 #activate it by doing
 $ source .venv/bin/activate
+## Install requirements
+$ pip install -r requirements.tx
 ```
 
 ## Get the list of first 5 unique manufacturers

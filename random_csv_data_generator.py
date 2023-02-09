@@ -1,4 +1,4 @@
-import sys, os, string, random
+import sys, string, random
 import pandas as pd
 
 from random import randint
