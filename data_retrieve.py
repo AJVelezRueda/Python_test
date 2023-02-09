@@ -10,7 +10,7 @@ def retrieve_api_data():
     query_result, next_item_url = get_next_items("https://swapi.dev/api/vehicles/")
     items = query_result
 
-    while len(items) < 5:
+    while len(items) < 5 and next_item_url is not None:
         next_items, next_item_url = get_next_items(next_item_url)
         items += next_items
 
