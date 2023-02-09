@@ -1,7 +1,16 @@
 import sys
 
 def transform_line(line):
-    return line.replace("|", ",")
+    columns = line.split("|")
+    output_line = []
+
+    for column in columns: 
+        if "," in column:
+            output_line.append('"' + column + '"')
+        else:
+            output_line.append(column)
+    return ",".join(output_line)
+            
 
 def transform_file(input_file_name, output_file_name):
     final_string = []
