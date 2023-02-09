@@ -17,5 +17,15 @@ python data_retrieve.py
 
 ### Get random CSV
 ```bash
+## Running example
 python random_csv_data_generator.py 8 sample.csv
+
+## Running test
+pytest
+```
+
+### Convert pipe into csv separated data files
+
+```bash
+python pipe_to_csv_separated_values.py ./test/resources/sample_data.txt sample_out.csv
 ```
