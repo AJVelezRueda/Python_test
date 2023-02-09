@@ -11,14 +11,14 @@ $ pip install -r requirements.tx
 
 ## Get the list of first 5 unique manufacturers
 ```bash
-python data_retrieve.py
+python3 data_retrieve.py
 ```
 [Note] I supposed when hitting the last page the API will return `None` value for `next`
 
 ### Get random CSV
 ```bash
 ## Running example
-python random_csv_data_generator.py 8 sample.csv
+python3 random_csv_data_generator.py 8 sample.csv
 
 ## Running test
 pytest
@@ -27,5 +27,5 @@ pytest
 ### Convert pipe into csv separated data files
 
 ```bash
-python pipe_to_csv_separated_values.py ./test/resources/sample_data.txt sample_out.csv
+python3 pipe_to_csv_separated_values.py ./test/resources/sample_data.txt sample_out.csv
 ```
