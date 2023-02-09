@@ -19,11 +19,18 @@ def generate_random_df(amount_of_numbers, string_length):
     df["strings"] = generate_random_strings_list(string_length, amount_of_numbers)
     return df
 
-def write_df_into_a_file(amount_of_numbers, string_length, file_name):
+def write_df_into_a_file(amount_of_numbers, string_length, file_name, mode):
     df = generate_random_df(amount_of_numbers, string_length)
-    df.to_csv(file_name, index=False, header=False)
+    df.to_csv(file_name, index=False, header=False, mode=mode)
 
 
+def write_df_in_chunks(amount_of_numbers, string_length, file_name):
+    write_df_into_a_file(amount_of_numbers%10000, string_length, file_name, "w")
+    
+    for i in range(0, amount_of_numbers//10000):
+        write_df_into_a_file(10000, string_length, file_name, "a")
+    
+    
 if __name__ == "__main__":
     args = sys.argv
-    write_df_into_a_file(int(args[1]), 8, args[2])
+    write_df_in_chunks(int(args[1]), 8, args[2])
