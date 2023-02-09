@@ -7,6 +7,8 @@ def transform_line(line):
     for column in columns: 
         if "," in column:
             output_line.append('"' + column + '"')
+        elif '"' in column:
+            output_line.append(column.replace('"', '""'))
         else:
             output_line.append(column)
     return ",".join(output_line)
