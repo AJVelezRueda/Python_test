@@ -12,3 +12,8 @@ $ source .venv/bin/activate
 python data_retrieve.py
 ```
 [Note] I supposed when hitting the last page the API will return `None` value for `next`
+
+### Get random CSV
+```bash
+python random_csv_data_generator.py 8 sample.csv
+```
