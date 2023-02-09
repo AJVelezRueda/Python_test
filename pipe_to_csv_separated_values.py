@@ -4,13 +4,15 @@ def transform_line(line):
     columns = line.split("|")
     output_line = []
 
-    for column in columns: 
+    for column in columns:
+        value = column 
+        if '"' in column:
+            value = column.replace('"', '""')
+        
         if "," in column:
-            output_line.append('"' + column + '"')
-        elif '"' in column:
-            output_line.append(column.replace('"', '""'))
-        else:
-            output_line.append(column)
+            value = '"' + value + '"'
+        
+        output_line.append(value)
     return ",".join(output_line)
             
 
